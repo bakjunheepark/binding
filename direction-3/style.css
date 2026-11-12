@@ -54,6 +54,7 @@ body > nav a{
 /* ---------- Header ---------- */
 
 body > header{
+	margin-block-start: 3rem;
 	display: block;
 	padding-block: var(--space) 3rem;
 }

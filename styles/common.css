@@ -5,8 +5,6 @@
 	--mute: #666666;
 }
 
-*, *::before, *::after { box-sizing: border-box; }
-
 header {
 	display: flex;
 	justify-content: space-between;

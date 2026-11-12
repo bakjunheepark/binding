@@ -5,7 +5,6 @@
 	--ink: #0a0a0a;
 	--mute: #616160;
 	--red: #bf0003;
-	--sand: #f3efe6;
 	--space: 1.25rem;
 	--line: 0.1rem solid var(--ink);
 }
@@ -43,6 +42,7 @@ nav a {
 /* ---------- Title ---------- */
 
 .article-header {
+	margin-block-start: 5rem;
 	margin-block-end: 5rem;
 	display: block;
 }
@@ -83,6 +83,11 @@ article > * + * {
 	flex-direction: column;
 	gap: 0.75rem;
 	padding: 1rem 1rem 1.5rem;
+}
+
+.box-body p {
+	font-family: 'Satoshi-Regular';
+	font-size: 1rem;
 }
 
 .box-body h2 {
@@ -169,6 +174,6 @@ article > * + * {
 
 @media (max-width: 30rem) {
 	h1 {
-		font-size: 3.5rem;
+		font-size: 5rem;
 	}
 }
