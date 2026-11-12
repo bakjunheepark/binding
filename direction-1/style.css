@@ -1,0 +1,175 @@
+/* Direction 1: Grid Poster */
+
+:root {
+	--paper: #f8f5ee;
+	--ink: #0a0a0a;
+	--mute: #616160;
+	--red: #bf0003;
+	--sand: #f3efe6;
+	--space: 1.25rem;
+	--line: 0.06rem solid var(--ink);
+}
+
+/* ---------- Page ---------- */
+
+body {
+	max-inline-size: 40rem;
+	margin-inline: auto;
+	padding: var(--space) var(--space) 0;
+	background: var(--paper);
+	color: var(--ink);
+	font-family: 'Satoshi-Medium', sans-serif;
+	line-height: 1.5;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* ---------- Top nav ---------- */
+
+nav ol {
+	display: flex;
+	gap: 1rem;
+	list-style: none;
+}
+
+nav a {
+	color: var(--mute);
+	text-decoration: none;
+}
+
+/* ---------- Title ---------- */
+
+.article-header {
+	margin-block-end: 5rem;
+	display: block;
+}
+
+.article-header p{
+	font-size: 1rem;
+	text-transform: uppercase;
+}
+
+h1 {
+	margin-block-end: 1.5rem;
+	font-size: 7rem;
+	font-weight: 700;
+	line-height: 1;
+	text-transform: none;
+}
+
+/* ---------- Boxes ---------- */
+
+article > * + * {
+	margin-block-start: var(--space);
+}
+
+.box, .box-narrow, .box-indent {
+	border: var(--line);
+	border-top-width: 2px;
+}
+
+.box-narrow {
+	inline-size: 90%;
+}
+
+.box-indent {
+	margin-inline-start: 5%;
+}
+
+.box-body {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	padding: 1rem 1rem 1.5rem;
+}
+
+.box-body h2 {
+	font-size: 1.5rem;
+	font-family: Satoshi-Bold;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+.box-body a {
+	text-decoration: underline;
+}
+
+.box-body a:hover {
+	color: var(--red);
+}
+
+/* ---------- Red squares ---------- */
+
+.redsquare-right, .redsquare-left {
+	display: flex;
+	align-items: flex-start;
+}
+
+.redsquare-right {
+	justify-content: flex-end;
+}
+
+.redsquare-right blockquote, .redsquare-left blockquote {
+	font-family: 'Erode-Medium';
+	inline-size: 75%;
+	padding: var(--space);
+	background: var(--red);
+	color: white;
+	font-size: 1.5rem;
+	line-height: 1.2;
+}
+
+/* "+" */
+.plus {
+	flex: 1;
+	text-align: center;
+	font-size: 6rem;
+	font-weight: 700;
+	line-height: 1;
+}
+
+.plus + blockquote {
+	inline-size: 55%;
+	min-block-size: 12.5rem;
+}
+
+/* ---------- Footer ---------- */
+
+.footer-block {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin: 2.5rem calc(-1 * var(--space)) 0;
+	border-top: var(--line);
+}
+
+.footer-block p {
+	display: flex;
+	align-items: center;
+	min-block-size: 5rem;
+	padding-inline: 1.5rem;
+	border-bottom: var(--line);
+	font-size: 1rem;
+	font-family: 'Satoshi-Medium';
+}
+
+.footer-block p:nth-child(odd) {
+	border-right: var(--line);
+}
+
+.footer-block p:first-child {
+	background: var(--ink);
+	color: white;
+}
+
+.footer-block a {
+	color: var(--red);
+}
+
+@media (max-width: 30rem) {
+	h1 {
+		font-size: 3.5rem;
+	}
+}
