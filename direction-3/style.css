@@ -1,23 +1,303 @@
+/* =========================================
+	Direction 3:
+	Verticle grid design inspired direction
+   ========================================= */
+
 :root{
-	--type-xl: 5rem;
-	--type-lg: 2.5rem;
-	--type-md: 1.5rem;
+	--type-xl: 3.5rem;
+	--type-lg: 1.375rem;
+	--type-md: 1rem;
+	--type-sm: 0.8125rem;
 
-	--space-lg: 4rem;
+	--space-lg: 3rem;
+	--space-md: 1.25rem;
+	--space-sm: 0.5rem;
 
-	--color-fg: black;
-	--color-b: white;
+	--color-fg: #111111;
+	--color-b: #f4f3ef;
+	--color-accent: #bf0103;
+	--color-mute: #6b6b6b;
+	--color-line: #b5b5b5;
 }
 
+/* common.css sets some of these too; this page resets them */
 body{
-	font-size: var(--type-md);
-	color: var(--color-fg);
+	max-inline-size: none;
+	margin: 0;
+	padding: 0 var(--space-md);
 	background-color: var(--color-b);
-	padding-block-start: var(--space-lg);
-	padding-inline: 2rem;
+	color: var(--color-fg);
+	font-family: 'Satoshi-Regular', Helvetica, Arial, sans-serif;
+	font-size: var(--type-md);
+	line-height: 1.45;
 }
 
+a{
+	color: var(--color-fg);
+	text-decoration: underline;
+	text-decoration-thickness: thin;
+}
+
+a:hover{
+	color: var(--color-accent);
+}
+
+
+/* ---------- Page header: small labels + vertical title ---------- */
+
+body > header{
+	display: block;
+	padding-block: var(--space-md) var(--space-lg);
+}
+
+.course{
+	margin-block-end: var(--space-lg);
+	font-size: var(--type-sm);
+	color: var(--color-mute);
+}
+
+/* "Thoughts on" is a small bold label, like "November" on the poster */
 h1{
+	margin: 0;
+	font-family: 'Satoshi-Bold', Helvetica, Arial, sans-serif;
+	font-weight: 700;
+	font-size: var(--type-sm);
+	line-height: 1.2;
+	letter-spacing: 0;
+}
+
+/* the essay title stands up and reads bottom to top */
+h1 cite{
+	display: block;
+	inline-size: 5em;
+	margin-top: var(--space-md);
+	font-size: 17vw;
+	font-style: normal;
+	line-height: 0.88;
+	letter-spacing: -0.045em;
+	writing-mode: vertical-rl;
+	transform: rotate(180deg);
+	text-align: end;
+	/* the title is turned upside down, so this left line shows on the right */
+	padding-left: 0.05em;
+	border-left: thin solid var(--color-line);
+}
+
+/* the Gridnik line */
+body > header p:last-child{
+	max-inline-size: 16rem;
+	margin-block-start: var(--space-md);
+	font-family: 'Satoshi-Bold', Helvetica, Arial, sans-serif;
+	font-weight: 700;
 	font-size: var(--type-lg);
-	margin-block: var(--space-lg);
+	line-height: 1.15;
+}
+
+
+/* ---------- Article info line ---------- */
+
+article > header{
+	display: block;
+	padding-block: var(--space-sm) var(--space-lg);
+	border-block-start: thin solid var(--color-fg);
+}
+
+article > header h2{
+	font-family: 'Satoshi-Bold', Helvetica, Arial, sans-serif;
+	font-weight: 700;
+	font-size: var(--type-sm);
+}
+
+article > header span{
+	font-family: 'Satoshi-Regular', Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	color: var(--color-mute);
+}
+
+
+/* ---------- Sections: numbered columns with a thin line ---------- */
+
+/* counts the sections so each one gets a big number */
+article{
+	counter-reset: section;
+}
+
+article section{
+	counter-increment: section;
+	inline-size: 88%;
+	padding: 0 var(--space-sm) var(--space-lg);
+	border-inline-start: thin solid var(--color-line);
+}
+
+/* on a phone the columns step right in groups of three */
+article section:nth-of-type(3n+2){
+	margin-inline-start: 6%;
+}
+
+article section:nth-of-type(3n+3){
+	margin-inline-start: 12%;
+}
+
+/* the big number */
+article section::before{
+	content: counter(section, decimal-leading-zero);
+	display: block;
+	font-family: 'Satoshi-Bold', Helvetica, Arial, sans-serif;
+	font-weight: 700;
+	font-size: var(--type-xl);
+	line-height: 1;
+	letter-spacing: -0.05em;
+}
+
+article section h3{
+	margin-block: var(--space-sm) var(--space-md);
+	font-family: 'Satoshi-Bold', Helvetica, Arial, sans-serif;
+	font-weight: 700;
+	font-size: var(--type-md);
+	line-height: 1.2;
+}
+
+article section p{
+	margin-block-end: var(--space-sm);
+	font-size: var(--type-sm);
+}
+
+
+/* ---------- Pull quotes: big bold lines ---------- */
+
+blockquote{
+	margin: var(--space-md) 0 0;
+	padding-block-start: var(--space-sm);
+	border-block-start: thin solid var(--color-fg);
+}
+
+article section blockquote p{
+	font-family: 'Satoshi-Bold', Helvetica, Arial, sans-serif;
+	font-weight: 700;
+	font-size: var(--type-lg);
+	line-height: 1.15;
+	letter-spacing: -0.01em;
+}
+
+article section blockquote p:last-child{
+	font-family: 'Satoshi-Regular', Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: var(--type-sm);
+	color: var(--color-mute);
+}
+
+blockquote cite{
+	font-style: normal;
+}
+
+
+/* ---------- Footer: info block, like "All events start 19.00" ---------- */
+
+body > footer{
+	display: block;
+	margin: 0 0 0 12%;
+	padding: 0 var(--space-sm) var(--space-lg);
+	border-inline-start: thin solid var(--color-line);
+	font-size: var(--type-sm);
+}
+
+body > footer p{
+	margin-block-end: var(--space-sm);
+}
+
+body > footer p:first-child{
+	font-family: 'Satoshi-Bold', Helvetica, Arial, sans-serif;
+	font-weight: 700;
+}
+
+
+/* =========================================
+   Wider screens: title on the left,
+   sections as stepped columns on the right
+   ========================================= */
+
+@media (min-width: 50rem){
+
+	:root{
+		--type-xl: 5rem;
+		--type-md: 1.0625rem;
+		--type-sm: 0.875rem;
+		--space-md: 2rem;
+	}
+
+	body{
+		display: grid;
+		grid-template-columns: 1fr 3fr;
+		column-gap: var(--space-md);
+	}
+
+	body > header{
+		grid-column: 1;
+		grid-row: 1 / span 2;
+	}
+
+	h1 cite{
+		font-size: 6.5vw;
+	}
+
+	main{
+		grid-column: 2;
+	}
+
+	/* three columns, like the poster's event columns */
+	article{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	article > header{
+		grid-column: 1 / -1;
+		margin-block-start: var(--space-md);
+	}
+
+	article section,
+	article section:nth-of-type(3n+2),
+	article section:nth-of-type(3n+3){
+		inline-size: auto;
+		margin: 0;
+		padding-inline-end: var(--space-md);
+	}
+
+	/* the steps: each row rises from left to right */
+	article section:nth-of-type(3n+1){
+		padding-block-start: 10rem;
+	}
+
+	article section:nth-of-type(3n+2){
+		padding-block-start: 5rem;
+	}
+
+	article section:nth-of-type(3n+3){
+		padding-block-start: 0;
+	}
+
+	/* footer sits under the last column */
+	body > footer{
+		grid-column: 2;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		margin: 0;
+		padding: 0;
+		border: none;
+	}
+
+	body > footer p{
+		grid-column: 3;
+		margin: 0;
+		padding: 0 var(--space-sm) var(--space-sm);
+		border-inline-start: thin solid var(--color-line);
+	}
+
+	body > footer p:first-child{
+		padding-block-start: var(--space-lg);
+	}
+
+	body > footer p:last-child{
+		padding-block-end: var(--space-lg);
+	}
 }

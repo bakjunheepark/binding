@@ -1,23 +1,205 @@
+/* =========================================
+   Direction 2: Letter tiles
+   ========================================= */
+
 :root{
-	--type-xl: 5rem;
-	--type-lg: 2.5rem;
-	--type-md: 1.5rem;
+	--unit: 25vw;          /* one tile */
+	--space: 1.25rem;
+	--radius: 0.625rem;
 
-	--space-lg: 4rem;
-
-	--color-fg: blue;
-	--color-b: beige;
+	--black: #111111;
+	--white: #ffffff;
+	--grey: #6b6b6b;
+	--line: #d1d1d1;
 }
 
+
 body{
-	font-size: var(--type-md);
-	color: var(--color-fg);
-	background-color: var(--color-b);
-	padding-block-start: var(--space-lg);
-	padding-inline: 2rem;
+	max-inline-size: none;
+	margin: 0;
+	padding: 0;
+	background-color: var(--white);
+	color: var(--black);
+	font-family: 'Satoshi-Regular', sans-serif;
+}
+
+a{
+	color: var(--black);
+}
+
+
+/* ---------- Nav ---------- */
+
+body > nav{
+	display: flex;
+	justify-content: space-between;
+	block-size: var(--unit);
+	padding: var(--space);
+}
+
+body > nav ol{
+	display: flex;
+	gap: var(--space);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+body > nav a{
+	display: inline;
+	border: none;
+	text-decoration: none;
+}
+
+body > nav ol a{
+	font-family: 'Satoshi-Bold', sans-serif;
+	font-size: 0.9rem;
+}
+
+/* ---------- Title tiles ---------- */
+
+body > header{
+	display: block;
 }
 
 h1{
-	font-size: var(--type-lg);
-	margin-block: var(--space-lg);
+	display: grid;
+	grid-template-columns: repeat(4, var(--unit));
+	margin: 0;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: calc(var(--unit) * 0.8);
+	line-height: 1;
+}
+
+/* letter in a rounded square */
+h1 span{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	block-size: var(--unit);
+	border: 0.06rem solid var(--black);
+	border-radius: var(--radius);
+}
+
+h1 .dark{
+	background-color: var(--black);
+	color: var(--white);
+}
+
+h1 .plus, h1 .empty{
+	border: none;
+}
+
+
+/* ---------- Article ---------- */
+
+article > header{
+	display: block;
+	padding: var(--space);
+}
+
+article > header h2{
+	font-family: 'Satoshi-Bold', sans-serif;
+	font-size: 1rem;
+}
+
+article > header h2 a{
+	text-decoration: underline;
+}
+
+article section{
+	padding-block: var(--space) calc(var(--space) * 2);
+}
+
+/* number */
+
+article section h3 .number{
+	display: block;
+	font-size: 3.5rem;
+	line-height: 1;
+	margin-block-end: 1rem;
+}
+
+/* subtitle */
+
+article section h3{
+	inline-size: fit-content;
+	margin: 0 0 var(--space) 0.75rem;
+	padding: 0.5rem;
+	background-color: var(--white);
+	font-family: 'Satoshi-Bold', sans-serif;
+	font-size: 2rem;
+	text-transform: uppercase;
+}
+
+/* each paragraph in a rounded box */
+
+article section > p{
+	margin-block-end: 0.5rem;
+	padding: var(--space);
+	border: 0.0625rem solid var(--black);
+	border-radius: var(--radius);
+	background-color: var(--white);
+}
+
+blockquote{
+	margin: var(--space) 0;
+	padding: var(--space);
+	background-color: var(--white);
+}
+
+blockquote p{
+	font-family: 'Satoshi-Bold', sans-serif;
+	font-size: 1.7rem;
+	line-height: 1.1;
+}
+
+/* "Richard Hollis" under the quote */
+blockquote p + p{
+	margin-block-start: 2rem;
+	font-family: 'Satoshi-Regular', sans-serif;
+	font-size: 0.8rem;
+	color: var(--grey);
+}
+
+
+/* ---------- Footer ---------- */
+
+body > footer{
+	display: flex;
+	justify-content: space-between;
+	padding: var(--space);
+	font-size: 0.8rem;
+	color: var(--grey);
+}
+
+
+@media (width >= 800px){
+
+	:root{
+		--unit: 12.5vw;
+	}
+
+	body{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	body > nav{
+		grid-column: 1 / -1;
+	}
+
+	body > header{
+		grid-column: 1;
+		margin: 0;
+	}
+
+	main,
+	body > footer{
+		grid-column: 2;
+	}
+
+	article > header{
+		padding-block-start: 0;
+	}
 }
