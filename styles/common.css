@@ -21,7 +21,7 @@ header p:last-child {
 
 h1 {
 	font-family: 'Satoshi-Bold', sans-serif;
-	font-size: 4rem;
+	font-size: 3rem;
 	line-height: 1.1;
 	margin-block-end: 2rem;
 	text-transform: uppercase;
@@ -54,6 +54,7 @@ main {
 main > p {
 	margin-block-end: 3rem;
 	max-inline-size: 50rem;
+	font-family: 'Erode-Regular';
 }
 
 
