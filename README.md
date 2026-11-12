@@ -5,8 +5,30 @@ https://www.markdownguide.org/cheat-sheet/
 
 # Project 3: *Binding*
 
-Demo/template for our [third projects](https://typography-interaction-2627.github.io/project/3/).
+# The Modernist Grid in 3 Directions
 
-> **Students will now create a “book,” assembling a collection of texts from their previous work into a cohesive whole—responding via their curation/selections, in writing, and with their design itself.**
->
-> The goal of this project is to apply the skills you have now developed across *multiple* web pages—creating your first *website*. This “book” will include a homepage (its cover), navigation (table of contents), individual pages for each text (chapters), and your introduction (a colophon). It will house your texts and allow a reader to move between them all. The final website will be responsive for screen ~~and print~~ layouts across all its pages.
+Three typographic directions for Richard Hollis's essay *The Modernist Grid* (2004).
+Each page uses the same text and generally same HTML structure; only the CSS changes.
+
+## Direction 1 — Grid Poster
+
+The essay is laid out as a stack of boxes, like modules. The boxes change width and position so the page
+reads as a system of rectangles, echoing Hollis's point that the grid grew out of the rectangular units of metal type.
+
+Quotes sit in red blocks that alternate between the right and left side, with a large "+" as a graphic accent. 
+
+The footer is a 2 × 2 title block, borrowed from architectural drawing sheets.
+
+## Direction 2 — Letter Tiles
+
+The title is written by a rounded square tile on a 4-column grid. 
+
+Black and white tiles, "+" signs and empty squares turn "THE MODERNIST GRID" into a modular pattern. 
+
+Each paragraph of the essay sits in its own rounded box.
+
+## Direction 3 — Vertical Poster
+
+Inspired by a Swiss-style event poster, the title stands vertically in three columns.
+
+The essay is split into numbered sections, each a narrow column with a thin line on its left.
