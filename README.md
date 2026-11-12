@@ -5,7 +5,7 @@ https://www.markdownguide.org/cheat-sheet/
 
 # Project 3: *Binding*
 
-# Sketches 3 Directions
+# Sketches in 3 Directions
 
 Three typographic directions for Richard Hollis's essay *The Modernist Grid* (2004).
 Each page uses the same text and generally same HTML structure; only the CSS changes.
