@@ -7,7 +7,7 @@
 	--red: #bf0003;
 	--sand: #f3efe6;
 	--space: 1.25rem;
-	--line: 0.06rem solid var(--ink);
+	--line: 0.1rem solid var(--ink);
 }
 
 /* ---------- Page ---------- */
@@ -68,7 +68,6 @@ article > * + * {
 
 .box, .box-narrow, .box-indent {
 	border: var(--line);
-	border-top-width: 2px;
 }
 
 .box-narrow {
