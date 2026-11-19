@@ -1,81 +1,30 @@
+/* =========================================
+   common.css
+   Shared by every page!
+   ========================================= */
+
 :root {
 	--space: 1.5rem;
 	--red: #bf0103;
 	--ink: #111111;
 	--mute: #666666;
+	--paper: #f4f1ea;
+	--white: #ffffff;
+
+	--card-1: #afafaf; /* 01 type */
+	--card-2: #d1d1d1; /* 02 modernist */
+	--card-3: #737373; /* 03 unbuild */
 }
 
-header {
-	display: flex;
-	justify-content: space-between;
-	margin-block-end: 3rem;
-	font-family: 'Satoshi-Medium', sans-serif;
-	font-size: 0.75rem;
-}
-
-header p:last-child {
-	color: var(--red);
-}
-
-h1 {
-	font-family: 'Satoshi-Bold', sans-serif;
-	font-size: 3rem;
-	line-height: 1.1;
-	margin-block-end: 2rem;
-	text-transform: uppercase;
-}
-
-h1 span {
-	display: block;
-}
+*, *::before, *::after { box-sizing: border-box; }
 
 body {
+	background-color: var(--paper);
 	color: var(--ink);
-	max-inline-size: 80rem;
-	margin-inline: auto;
-	padding: 4rem 1.5rem;
-	font-family: 'Erode-Regular', serif;
+	font-family: 'Satoshi-Regular', sans-serif;
 	line-height: 1.5;
 }
 
 a {
-	color: inherit;
 	text-decoration: none;
-}
-
-/* ---------- Intro ---------- */
-
-main {
-	flex: 1;
-}
-
-main > p {
-	margin-block-end: 3rem;
-	max-inline-size: 50rem;
-	font-family: 'Erode-Regular';
-}
-
-
-/* ---------- Sketches ---------- */
-
-nav ol {
-	display: grid;
-	gap: var(--space);
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-nav a {
-	display: block;
-	font-family: 'Satoshi-Medium', sans-serif;
-	text-decoration: underline;
-}
-
-footer {
-	display: flex;
-	justify-content: space-between;
-	margin-block-start: calc(3 * var(--space));
-	font-family: 'Satoshi-Regular', sans-serif;
-	font-size: 0.7rem;
 }

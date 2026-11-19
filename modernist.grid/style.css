@@ -1,0 +1,319 @@
+/* =========================================
+   The Modernist Grid
+   ========================================= */
+
+:root {
+	--space: 1.3rem;
+	--line: 0.06rem solid var(--ink);
+}
+
+/* ---------- Page ---------- */
+
+body {
+	max-inline-size: 40rem;
+	margin-inline: auto;
+	padding: var(--space) var(--space) 0;
+	font-family: 'Satoshi-Regular', sans-serif;
+	line-height: 1.5;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* ---------- Header: "Binding" + 01 02 03 ---------- */
+
+.site-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.site-header > a {
+	font-family: 'Satoshi-Medium', sans-serif;
+	font-size: 0.7rem;
+}
+
+nav ol {
+	display: flex;
+	gap: 1rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav a {
+	color: var(--red);
+	font-family: 'Satoshi-Bold', sans-serif;
+	font-size: 0.8rem;
+}
+
+nav a:hover,
+.site-header > a:hover {
+	color: var(--ink);
+}
+
+/* ---------- Title ---------- */
+
+.article-header {
+	display: block;
+	margin-block: 3rem 5rem;
+}
+
+h1 {
+	margin-block-end: 1.8rem;
+	font-family: 'Satoshi-Bold', sans-serif;
+	font-size: clamp(3.5rem, 12vw, 5.5rem);
+	line-height: 1;
+}
+
+.article-header p {
+	font-family: 'Satoshi-Medium', sans-serif;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+.article-header a:hover {
+	color: var(--red);
+}
+
+/* ---------- Boxes ---------- */
+
+article > * + * {
+	margin-block-start: var(--space);
+}
+
+.box,
+.box-narrow,
+.box-indent {
+	border: var(--line);
+}
+
+.box-narrow {
+	inline-size: 90%;
+}
+
+.box-indent {
+	margin-inline-start: 6%;
+}
+
+.box-body {
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+	padding: 1rem 1rem 1.5rem;
+}
+
+.box-body h2 {
+	font-family: 'Satoshi-Bold', sans-serif;
+	font-size: 1.5rem;
+	line-height: 1.2;
+}
+
+.box-body p {
+	font-size: 0.9rem;
+	line-height: 1.5;
+}
+
+.box-body a {
+	text-decoration: underline;
+}
+
+.box-body a:hover {
+	color: var(--red);
+}
+
+/* ---------- Red squares (pull quotes) ---------- */
+
+.redsquare-right,
+.redsquare-left {
+	display: flex;
+	align-items: center;
+}
+
+.redsquare-right {
+	justify-content: flex-end;
+}
+
+.redsquare-right blockquote,
+.redsquare-left blockquote {
+	inline-size: 75%;
+	padding: var(--space);
+	background: var(--red);
+	color: var(--white);
+	font-family: 'Satoshi-Bold', sans-serif;
+	font-size: 1.4rem;
+	line-height: 1.2;
+}
+
+blockquote p::before { content: open-quote; }
+blockquote p::after  { content: close-quote; }
+
+/* "+" next to a red square */
+.plus {
+	flex: 1;
+	text-align: center;
+	font-family: 'Satoshi-Bold', sans-serif;
+	font-size: 6rem;
+	line-height: 1;
+}
+
+/* the first red square is narrower and taller, beside its "+" */
+.plus + blockquote {
+	inline-size: 56%;
+	min-block-size: 12.5rem;
+}
+
+/* ---------- Decorative grid studies (around Bayer's Square) ---------- */
+
+.figure div {
+	border: 0.06rem solid var(--red);
+}
+
+.figure .solid  { background: var(--ink); }
+.figure .filled { background: var(--red); }
+
+/* black block + a square inside a square */
+.figure-square {
+	display: flex;
+	gap: 8%;
+	block-size: 9.8rem;
+	margin-block-start: 2.3rem;
+	padding-inline-start: 0.4rem;
+}
+
+.figure-square .solid {
+	inline-size: 34%;
+}
+
+.figure-square .outline {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	inline-size: 40%;
+}
+
+.figure-square .outline .outline {
+	inline-size: 50%;
+	block-size: 50%;
+}
+
+/* one module, then a long module and a red one */
+.figure-modules {
+	display: grid;
+	grid-template-columns: 27% 1fr 27%;
+	grid-auto-rows: 4.8rem;
+	gap: 1.1rem;
+}
+
+.figure-modules .solid { grid-column: 1; }
+.figure-modules .wide  { grid-column: 1 / 3; }
+.figure-modules .filled { grid-column: 3; }
+
+/* ---------- Footer: 2 × 2 title block ---------- */
+
+.footer-block {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin: 2.5rem calc(-1 * var(--space)) 0;
+	border-block-start: var(--line);
+}
+
+.footer-block p {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-block-size: 4.9rem;
+	padding-inline: 1.5rem;
+	border-block-end: var(--line);
+	font-family: 'Satoshi-Medium', sans-serif;
+	font-size: 1rem;
+	line-height: 1.3;
+	text-align: center;
+}
+
+.footer-block p:nth-child(odd) {
+	border-inline-end: var(--line);
+}
+
+.footer-block p:first-child {
+	background: var(--ink);
+	color: var(--white);
+}
+
+.footer-block a {
+	color: var(--red);
+}
+
+.footer-block a:hover {
+	color: var(--ink);
+}
+
+
+/* =========================================
+   Web
+   ========================================= */
+
+@media (width >= 500px) {
+
+	body {
+		max-inline-size: none;
+		padding: var(--space) 0 0;
+	}
+
+	body > header,
+	body > main {
+		max-inline-size: 48rem;
+		margin-inline: auto;
+		padding-inline: var(--space);
+	}
+
+	.site-header > a { font-size: 0.8rem; }
+	nav a           { font-size: 0.9rem; }
+
+	.article-header {
+		margin-block: 4rem 5rem;
+	}
+
+	.article-header p {
+		font-size: 1.1rem;
+	}
+
+	.box-body {
+		padding: 1.3rem 1.3rem 1.8rem;
+	}
+
+	.box-body h2 { font-size: 1.8rem; }
+
+	.box-body p {
+		font-size: 1rem;
+		line-height: 1.6;
+	}
+
+	.redsquare-right blockquote,
+	.redsquare-left blockquote {
+		font-size: 1.6rem;
+		padding: 1.5rem;
+	}
+
+	.plus + blockquote {
+		min-block-size: 15rem;
+	}
+
+	.figure-square  { block-size: 12rem; }
+	.figure-modules { grid-auto-rows: 5.8rem; }
+
+	/* footer: one line, full width */
+	.footer-block {
+		grid-template-columns: repeat(4, 1fr);
+		margin: 3rem 0 0;
+	}
+
+	.footer-block p {
+		border-inline-end: var(--line);
+	}
+
+	.footer-block p:last-child {
+		border-inline-end: none;
+	}
+}

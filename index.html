@@ -2,12 +2,14 @@
 <html lang="en">
 
 	<head>
+		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Binding</title>
 		<link href="styles/reset.css" rel="stylesheet">
 		<link href="styles/common.css" rel="stylesheet">
-		<link href="fonts/Erode_Complete/Fonts/WEB/css/erode.css" rel="stylesheet">
-		<link href="fonts/Satoshi_Complete/Fonts/WEB/css/satoshi.css" rel="stylesheet">
+		<link href="styles/style.css" rel="stylesheet">
+		<link href="fonts/erode.css" rel="stylesheet">
+		<link href="fonts/satoshi.css" rel="stylesheet">
 	</head>
 
 	<body id="top">
@@ -15,29 +17,62 @@
 			<p>Binding, three essays on the grid</p>
 		</header>
 
-		<h1><span>The Grid,</span><span>Built & Unbuilt.</span></h1>
+		<h1><span>The Grid,</span><span>Built &amp; Unbuilt</span></h1>
 
 		<main>
-			<p>
-				Every typographic page rests on a grid, whether we see it or not. These three essays look at how that structure was built,
-				systematised, and finally loosened.
-			</p>
+			<!-- Intro / Colophon -->
+			<section class="about">
+				<div class="about-menu">
+					<details name="about" class="about-intro">
+						<summary>
+							<span class="about-label">Intro</span>
+							<span class="about-text">Every typographic page rests on a grid, whether we see it or not. These three essays look at how that structure was built, systematised, and finally loosened.</span>
+						</summary>
+					</details>
+
+					<details name="about" class="about-colophon">
+						<summary>
+							<span class="about-label">Colophon</span>
+							<span class="about-text">Binding was designed and coded by Jun Park as a study of the typographic grid, built from HTML and CSS. It reads three essays side by side: Anthony Froshaug’s <cite>Typography is a Grid</cite> (1967), Richard Hollis’s <cite>The Modernist Grid</cite> (2004), and Rob Giampietro’s <cite>Unbuilding</cite> (2012). Each is set on its own variation of the grid, in Satoshi and Erode.</span>
+						</summary>
+					</details>
+				</div>
+
+				<span class="plus">+</span>
+			</section>
+
+			<aside>
+				<p>Three essays</p>
+				<p>1967 — 2012</p>
+			</aside>
 
 			<nav>
 				<ol>
 					<li>
-						<a href="direction-1/">
-							<h2>Sketch 1</h2>
+						<a href="modernist.grid/">
+							<div class="grid"><span>2004</span></div>
+							<div class="grid-body">
+								<h2>The Modernist Grid</h2>
+								<p>Richard Hollis</p>
+							</div>
 						</a>
 					</li>
 					<li>
-						<a href="direction-2/">
-							<h2>Sketch 2</h2>
+						<a href="unbuilding/">
+							<div class="grid"><span>2012</span></div>
+							<div class="grid-body">
+								<h2>Unbuilding</h2>
+								<p>Rob Giampietro</p>
+							</div>
 						</a>
 					</li>
 					<li>
-						<a href="direction-3/">
-							<h2>Sketch 3</h2>
+						<a href="typo.is.grid/">
+							<div class="grid"><span>1967</span></div>
+							<div class="grid-body">
+								<h2>Typography is a Grid</h2>
+								<p>Anthony Froshaug</p>
+							</div>
 						</a>
 					</li>
 				</ol>
@@ -45,9 +80,27 @@
 		</main>
 
 		<footer>
-			<p>Designed by © Jun Park</p>
-			<p>Typography & Interaction</p>
+			<div class="footer-namecourse">
+				<div class="footer-box">
+					<p class="box-content">Designed by © Jun Park</p>
+				</div>
+
+				<div class="footer-box">
+					<p class="box-content">Typography &amp; Interaction</p>
+				</div>
+			</div>
+
+			<div class="footer-yeartop">
+				<div class="footer-box">
+					<p class="box-content">2026</p>
+				</div>
+
+				<div class="footer-box">
+					<a href="#top">Back to top</a>
+				</div>
+			</div>
 		</footer>
+
 	</body>
 
 </html>

@@ -1,0 +1,313 @@
+/* =========================================
+   style.css - Landing page only
+   ========================================= */
+
+body {
+	max-inline-size: 80rem;
+	margin-inline: auto;
+	padding: 4rem 1.5rem;
+}
+
+header {
+	margin-block-end: 3rem;
+	font-family: 'Satoshi-Medium', sans-serif;
+	font-size: 0.9rem;
+}
+
+header p { margin: 0; }
+
+h1 {
+	margin: 0 0 3rem;
+	font-family: 'Satoshi-Bold', sans-serif;
+	font-size: clamp(3rem, 9vw, 7.5rem);
+	line-height: 1;
+}
+
+h1 span {
+	display: block;
+}
+
+
+/* ---------- everything stacks ---------- */
+
+main {
+	display: grid;
+	gap: var(--space);
+	grid-template-areas:
+		"about"
+		"essays"
+		"list";
+}
+
+.about       { grid-area: about; }
+main > aside { grid-area: essays; }
+main > nav   { grid-area: list; }
+
+nav ol {
+	display: grid;
+	gap: var(--space);
+	margin: 0;
+	padding: 0;
+	grid-template-areas:
+		"one"
+		"two"
+		"three";
+}
+
+nav li {
+	list-style: none;
+}
+
+/* Place each card */
+nav li:nth-child(3) { grid-area: one; }   /* Type */
+nav li:nth-child(1) { grid-area: two; }   /* Modernist */
+nav li:nth-child(2) { grid-area: three; } /* Unbuild */
+
+
+/* ---------- Plus signs ---------- */
+
+.plus {
+	font-family: 'Satoshi-Bold', sans-serif;
+	font-size: 3rem;
+	line-height: 1;
+}
+
+
+/* ----------  About: Intro / Colophon (details + summary) ---------- */
+
+.about {
+	display: flex;
+	align-items: center;
+	gap: 2.5rem;
+	min-block-size: 10rem;
+	padding: var(--space) 2.8rem;
+	background-color: var(--card-2);
+	color: var(--ink);
+}
+
+.about-menu {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+/* hide the default triangle */
+.about summary {
+	display: block;
+	list-style: none;
+}
+
+.about-label {
+	font-family: 'Satoshi-Bold', sans-serif;
+	font-size: 2.5rem;
+	line-height: 1;
+	transition: color 0.2s ease;
+}
+
+.about summary:hover .about-label {
+	color: var(--red);
+}
+
+.about-text {
+	display: none;
+	font-size: 1.3rem;
+}
+
+/* one is open: show its text, hide everything else */
+.about:has(details[open]) {
+	padding-inline: 2.1rem;
+}
+
+.about:has(details[open]) .plus,
+.about:has(details[open]) details:not([open]),
+.about details[open] .about-label {
+	display: none;
+}
+
+.about details[open] .about-text {
+	display: block;
+}
+
+
+/* ---------- Three essays block ---------- */
+
+main > aside {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-block-size: 8rem;
+	margin: 0;
+	padding: var(--space);
+	background-color: var(--card-3);
+	color: var(--white);
+	font-family: 'Satoshi-Bold', sans-serif;
+	font-size: 1.3rem;
+	line-height: 1.2;
+}
+
+main > aside p { margin: 0; }
+
+main > aside p:last-child {
+	align-self: flex-end;
+}
+
+
+/* ---------- 3 Readings ---------- */
+
+nav a {
+	display: flex;
+	flex-direction: column;
+	min-block-size: 13rem;
+	block-size: 100%;
+	background-color: var(--red);
+	color: var(--white);
+}
+
+.grid {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.8rem 1rem;
+	font-family: 'Satoshi-Medium', sans-serif;
+	font-size: 0.8rem;
+}
+
+/* Index numbers */
+
+nav li:nth-child(3) .grid::before { content: "01"; }
+nav li:nth-child(1) .grid::before { content: "02"; }
+nav li:nth-child(2) .grid::before { content: "03"; }
+
+.grid span {
+	opacity: 0.7;
+}
+
+.grid-body {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 1rem;
+}
+
+.grid-body h2 {
+	margin: 0 0 1.5rem;
+	font-family: 'Satoshi-Bold', sans-serif;
+	font-size: 2.5rem;
+	line-height: 1.1;
+}
+
+.grid-body p {
+	margin: 0;
+	font-family: 'Satoshi-Medium', sans-serif;
+}
+
+
+/* ---------- Footer ---------- */
+
+footer {
+	display: grid;
+	gap: var(--space);
+	margin-block-start: 4.5rem;
+	font-family: 'Satoshi-Medium', sans-serif;
+	font-size: 0.8rem;
+}
+
+.footer-namecourse,
+.footer-yeartop {
+	display: flex;
+}
+
+.footer-box {
+	flex: 1;
+	min-block-size: 3rem;
+	padding: 0.8rem 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: var(--white);
+}
+
+.footer-namecourse .footer-box:first-child {
+	background-color: var(--red);
+	color: var(--white);
+}
+
+.footer-yeartop .footer-box:last-child {
+	background-color: var(--ink);
+	color: var(--white);
+}
+
+.footer-box p {
+	margin: 0;
+}
+
+.footer-box a {
+	color: inherit;
+	font-family: 'Satoshi-Black', sans-serif;
+	font-size: 1rem;
+}
+
+
+/* ---------- web: the grid ----------
+
+   [ about ] [       ] [ essays ]
+   [       ] [  01   ] [   +    ]
+   [  02   ] [   +   ] [  03    ]
+
+   Colophon open:
+   [ colophon -------- ] [ essays ]
+*/
+
+@media (width > 500px) {
+	header { margin-block-end: 5rem; }
+	h1 { margin-block-end: 7rem; }
+
+	main {
+		gap: 0;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: minmax(10rem, auto) auto;
+		grid-template-areas:
+			"about .    essays"
+			"list  list list";
+	}
+
+	main:has(.about-colophon[open]) {
+		grid-template-areas:
+			"about about essays"
+			"list  list  list";
+	}
+
+	nav ol {
+		gap: 0;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: minmax(14rem, auto) minmax(13rem, auto);
+		grid-template-areas:
+			".   one    plus-a"
+			"two plus-b three";
+	}
+
+	/* + signs */
+
+	nav ol::before,
+	nav ol::after {
+		content: "+";
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-family: 'Satoshi-Bold', sans-serif;
+		font-size: 6rem;
+		line-height: 1;
+	}
+
+	nav ol::before { grid-area: plus-a; }
+	nav ol::after  { grid-area: plus-b; }
+
+	footer {
+		gap: 0;
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.footer-namecourse { grid-column: 1; }
+	.footer-yeartop    { grid-column: 3; }
+}
